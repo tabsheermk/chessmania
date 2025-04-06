@@ -8,6 +8,6 @@ const connectionString = process.env.DATABASE_URL;
 const client = postgres(connectionString as string, {
   prepare: false,
 });
-const db = drizzle(client);
+export const db = drizzle(client);
 
 await db.select().from(usersTable);
